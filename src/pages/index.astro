@@ -1,11 +1,134 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import {BriefcaseBusiness, Euro, ReceiptEuro, Ellipsis, Lightbulb} from '@lucide/astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Feature from "../components/Feature.astro";
+import { Image } from "astro:assets";
+import PatrickHuizinga from "../assets/patrick-huizinga.png";
+import Logomark from "../assets/logomark.svg";
+import WaitlistRequest from "../components/WaitlistRequest.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <section id="hero" class="bg-muted pt-24 sm:pt-48 pb-16 sm:pb-32">
+    <div class="container">
+      <div class="flex flex-col items-center text-center">
+        <h1 class="display max-w-[800px] mb-4 starting:opacity-0 starting:translate-y-1.5 transition-all duration-400">
+          De
+          <span class="inline-block bg-gradient-to-tr from-primary/80 to-secondary/80 text-primary-foreground rounded-full px-3 sm:px-5 pt-0.5 sm:pt-1 pb-1.5 sm:pb-2">veelzijdige</span>
+          assistent voor ondernemers
+        </h1>
+        <p class="sm:text-lg max-w-[640px] mb-10 starting:opacity-0 starting:translate-y-1.5 transition-all duration-400 delay-100">Bizzly is een slimme AI-assistent die freelancers en zelfstandigen helpt groeien, met
+          advies op maat over de
+          randzaken, zodat jij de focus houdt op wat je het liefst doet.</p>
+        <WaitlistRequest/>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="py-12 sm:py-16 border-b starting:opacity-0 duration-600 delay-600">
+    <div class="container">
+      <div class="flex flex-col items-center">
+        <h1 class="h3 mb-12 sm:mb-16">Bizzly helpt jou met...</h1>
+        <ul class="grid sm:grid-cols-2 xl:grid-cols-4 gap-10">
+          <Feature title="Bedrijfsvragen" description="Strategisch meedenken over je groei, prijs en structuur.">
+            <BriefcaseBusiness class="size-6"/>
+          </Feature>
+          <Feature title="Marketing" description="Vind de juiste woorden en kanalen om jezelf zichtbaar te maken.">
+            <Euro class="size-6"/>
+          </Feature>
+          <Feature title="Boekhouden" description="Antwoorden op veelvoorkomende financiële en fiscale vragen.">
+            <ReceiptEuro class="size-6"/>
+          </Feature>
+          <Feature title="En meer!" description="We zijn benieuwd naar waar jij behoefte aan hebt!">
+            <Ellipsis class="size-6"/>
+          </Feature>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="py-24 sm:py-32">
+    <div class="container">
+      <div class="flex flex-col xl:flex-row items-start gap-24">
+        <div>
+          <div class="text-primary font-semibold mb-2">Hoe werkt het?</div>
+          <h1 class="mb-6">Ondernemen is veeleisend. <span class="bg-clip-text text-transparent bg-gradient-to-tr from-primary to-secondary">Bizzly</span> maakt het simpel.</h1>
+          <p class="sm:text-lg text-muted-foreground mb-10">Als ondernemer moet je veel zelf regelen en is het makkelijk om kansen te laten liggen. Bij Bizzly kun je
+            altijd terecht met ál je vragen. Zo haal je het beste uit jezelf en je onderneming.</p>
+          <a href="#cta" class="inline-flex items-center justify-center gap-2 h-12 bg-primary text-primary-foreground font-medium rounded-full px-8 hover:bg-primary-dark duration-150">Hou mij op de hoogte</a>
+        </div>
+        <ol class="w-full xl:max-w-[600px] bg-gradient-to-tr from-primary to-secondary text-primary-foreground rounded-4xl shadow-2xl p-6 sm:p-8 space-y-8 starting:opacity-0 starting:scale-95 duration-600">
+          <li class="flex">
+            <div class="flex items-center justify-center bg-background rounded-full h3 text-foreground shrink-0 size-12 sm:size-16">1</div>
+            <div class="ml-4">
+              <h2 class="h4 mb-1">Maak een project aan</h2>
+              <p class="text-sm">Voeg alle relevante context toe over je project, zodat je altijd passend antwoord krijgt.</p>
+            </div>
+          </li>
+          <li class="flex">
+            <div class="flex items-center justify-center bg-background rounded-full h3 text-foreground shrink-0 size-12 sm:size-16">2</div>
+            <div class="ml-4">
+              <h2 class="h4 mb-1">Voeg assistenten toe aan je project</h2>
+              <p class="text-sm">Bepaal zelf waar je hulp bij nodig hebt per project, bijvoorbeeld marketing, boekhouden, etc.</p>
+            </div>
+          </li>
+          <li class="flex">
+            <div class="flex items-center justify-center bg-background rounded-full h3 text-foreground shrink-0 size-12 sm:size-16">3</div>
+            <div class="ml-4">
+              <h2 class="h4 mb-1">Krijg persoonlijk advies op maat!</h2>
+              <p class="text-sm">Bizzly helpt je met alles waar je tegenaan loopt als de perfecte sparringspartner.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="community-driven" class="bg-gradient-to-t from-muted to-background py-24 sm:py-32">
+    <div class="container">
+      <div class="flex flex-col items-center text-center">
+        <div class="font-semibold text-primary mb-2">Community gedreven</div>
+        <h1 class="max-w-[960px] mb-4">Een initiatief door ondernemers, voor ondernemers</h1>
+        <p class="max-w-[640px] sm:text-lg text-muted-foreground mb-10">Bizzly heeft als doel om de perfecte assistent te zijn voor <strong>iedere</strong> ondernemer. We luisteren graag naar jouw ideeën en feedback.</p>
+        <a href="mailto:hello@bizzly.nl" class="inline-flex items-center justify-center gap-2 h-12 bg-primary text-primary-foreground font-medium rounded-full px-8 hover:bg-primary-dark duration-150">
+          Deel je ideeën
+          <Lightbulb class="size-5"/>
+        </a>
+        <div class="flex flex-col sm:flex-row items-start gap-6 max-w-[720px] bg-background rounded-3xl border p-6 mt-16 starting:opacity-0 starting:scale-95 duration-600">
+          <div class="hidden sm:block rounded-full size-16 shrink-0 border">
+            <Image src={PatrickHuizinga} alt="Patrick Huizinga" class="rounded-full object-cover"/>
+          </div>
+          <div class="text-start">
+            <p class="sm:mb-6">“Toen ik zelf startte als zelfstandige merkte ik hoeveel je alleen moet uitzoeken: van je tarieven tot je
+              marketing tot je boekhouding. Ik wil met dit initiatief een slimme assistent bouwen, maar vooral ook een
+              community waarin we elkaar vooruit helpen. Want ondernemen doe je misschien alleen, maar je hoeft het niet
+              in je eentje te dragen.”</p>
+            <p class="hidden sm:inline-block"><strong>Patrick Huizinga</strong>, zelfstandig webontwikkelaar & bedenker Bizzly</p>
+          </div>
+          <div class="flex gap-4 sm:hidden">
+            <div class="rounded-full size-16 shrink-0 border">
+              <Image src={PatrickHuizinga} alt="Patrick Huizinga" class="rounded-full object-cover"/>
+            </div>
+            <div class="text-start">
+              <div class="font-semibold">Patrick Huizinga</div>
+              <div class="text-sm text-muted-foreground">
+                Zelfstandig Webontwikkelaar & Bedenker Bizzly
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="py-24 sm:py-32 bg-muted">
+    <div class="container">
+      <div class="relative flex flex-col items-center bg-slate-800 text-primary-foreground text-center rounded-4xl shadow-2xl px-8 sm:px-16 pt-16 sm:pt-20 pb-12 sm:pb-16 starting:opacity-0 starting:scale-95 duration-600">
+        <Image src={Logomark} alt="Blizzly" class="absolute -top-7 sm:-top-8 left-1/2 -translate-x-1/2 h-14 sm:h-16"/>
+        <h1 class="h2 max-w-[800px] mb-4">Wil jij als eerste toegang tot jouw eigen AI business assistent?</h1>
+        <p class="max-w-[800px] mb-10">Meld je aan voor de wachtlijst en ontvang als eerste een uitnodiging om Bizzly uit te proberen.</p>
+        <WaitlistRequest/>
+      </div>
+    </div>
+  </section>
 </Layout>

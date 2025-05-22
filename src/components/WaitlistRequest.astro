@@ -1,0 +1,30 @@
+---
+import { actions } from "astro:actions";
+---
+
+<form method="POST" class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto starting:opacity-0 starting:translate-y-1.5 transition-all duration-400 delay-200">
+  <label for="email" class="sr-only">Vul je e-mail adres in om op de hoogte te blijven</label>
+  <input id="email" name="email" type="email" placeholder="Vul je e-mailadres in" class="bg-white h-12 text-sm text-foreground rounded-full border px-4 placeholder:font-medium w-full sm:w-[320px]" required/>
+  <button type="submit" class="inline-flex items-center justify-center text-nowrap gap-2 h-12 bg-primary text-primary-foreground font-medium rounded-full px-8 hover:bg-primary-dark duration-150">
+    Hou mij op de hoogte
+  </button>
+</form>
+<p id="error-message" class="mt-2 text-center text-destructive"></p>
+
+<script>
+  import { actions } from 'astro:actions'
+  import { navigate } from 'astro:transitions/client'
+
+  const form = document.querySelector('form')
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault()
+    const formData = new FormData(form)
+    const response = await actions.send(formData)
+    if (!response && response.error) {
+      errorEl.innerHTML = 'Er is iets fout gegaan. Probeer het opnieuw of neem contact op met hello@bizzly.nl'
+      console.error('Error in response:', response?.error)
+      return
+    }
+    form.outerHTML = '<p class="block px-4 py-2 text-green-600 bg-green-100 border border-green-500 font-medium rounded-full">Bedankt! Je bent de eerste die van ons hoort bij een update.</p>'
+  })
+</script>

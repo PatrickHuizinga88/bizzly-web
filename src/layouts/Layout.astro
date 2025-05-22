@@ -1,3 +1,9 @@
+---
+import "../styles/global.css";
+import { Image } from "astro:assets";
+import Logo from "../assets/logo-light.svg";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -5,18 +11,31 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Bizzly | De AI-assistent voor ondernemers</title>
 	</head>
 	<body>
+	<header class="bg-background border-b">
+		<div class="container">
+			<div class="flex items-center justify-between py-4 sm:py-6">
+				<a href="/">
+					<Image src={Logo} alt="Bizzly" class="h-8 sm:h-10 w-auto"/>
+				</a>
+				<div class="flex gap-4">
+					<a href="mailto:hello@bizzly.nl" class="hidden sm:inline-flex items-center justify-center gap-2 h-10 bg-background border font-medium rounded-full px-4 hover:bg-muted duration-150">Deel je ideeën</a>
+					<a href="#cta" class="inline-flex items-center justify-center gap-2 h-10 bg-primary text-primary-foreground font-medium rounded-full px-4 hover:bg-primary-dark duration-150">Inschrijven</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
 		<slot />
+	</main>
+	<footer>
+
+	</footer>
 	</body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+
 </style>
