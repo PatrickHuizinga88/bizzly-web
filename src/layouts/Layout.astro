@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import { Image } from "astro:assets";
 import Logo from "../assets/logo-light.svg";
+import Umami from "../components/Umami.astro";
 ---
 
 <!doctype html>
@@ -10,8 +11,22 @@ import Logo from "../assets/logo-light.svg";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
 		<meta name="generator" content={Astro.generator} />
+		<Umami id="7562b1e3-365c-466d-be4e-1728291c0876" />
 		<title>Bizzly | De AI-assistent voor ondernemers</title>
+		<meta name="description" content="Bizzly is jouw slimme AI-assistent voor ondernemersvragen over marketing, boekhouden en bedrijfsvoering. Ontdek hoe jij als zelfstandige minder hoeft uit te zoeken — en meer kunt ondernemen." />
+
+		<!-- Open Graph Meta Tags -->
+		<meta property="og:title" content="Bizzly | De AI-assistent voor ondernemers" />
+		<meta property="og:description" content="Bizzly is jouw slimme AI-assistent voor ondernemersvragen over marketing, boekhouden en bedrijfsvoering. Ontdek hoe jij als zelfstandige minder hoeft uit te zoeken — en meer kunt ondernemen." />
+		<meta property="og:url" content="https://bizzly.nl" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Bizzly | De AI-assistent voor ondernemers" />
+		<meta name="twitter:description" content="Bizzly is jouw slimme AI-assistent voor ondernemersvragen over marketing, boekhouden en bedrijfsvoering. Ontdek hoe jij als zelfstandige minder hoeft uit te zoeken — en meer kunt ondernemen." />
 	</head>
 	<body>
 	<header class="bg-background border-b">
@@ -33,9 +48,7 @@ import Logo from "../assets/logo-light.svg";
 	<footer>
 
 	</footer>
+
+	<script src="../utils/aos.js"></script>
 	</body>
 </html>
-
-<style>
-
-</style>
