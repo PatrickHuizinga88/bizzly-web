@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+const APP_NAME = 'Bizzly'
+const SUPPORT_EMAIL = 'support@bizzly.nl'
+const lastUpdated = '23 mei 2025'
+---
+
+<Layout>
+  <article class="container max-w-3xl mx-auto">
+    <h1 class="h2 mb-4">{APP_NAME} Privacybeleid</h1>
+    <p><strong>Laatst bijgewerkt: {lastUpdated}</strong></p>
+    <p>
+      Welkom bij {APP_NAME}. Dit privacybeleid legt uit hoe wij jouw informatie verzamelen, gebruiken, opslaan en delen
+      wanneer platform (de "Dienst") gebruikt. Door gebruik te maken van {APP_NAME} ga je akkoord met het verzamelen en
+      gebruiken van jouw gegevens in overeenstemming met dit beleid.
+    </p>
+    <hr/>
+    <h2 class="h3 mt-6 mb-2">1. Gegevensverzameling</h2>
+    <p>Wij verzamelen de volgende soorten informatie van onze gebruikers:</p>
+    <ul>
+      <li><strong>Persoonlijke informatie:</strong> Naam, e-mailadres en andere contactgegevens.</li>
+      <li><strong>Betaalinformatie:</strong> Veilig verwerkt via Stripe, inclusief e-mailadres en betalingsgegevens.
+      </li>
+      <li><strong>Dieet- & Persoonsgegevens:</strong> Informatie die wordt verstrekt om gepersonaliseerde
+        maaltijdplannen
+        te creëren, zoals dieetvoorkeuren en andere persoonlijke details.
+      </li>
+    </ul>
+    <h2 class="h3 mt-6 mb-2">2. Cookies & Tracking</h2>
+    <p>
+      Wij gebruiken cookies en vergelijkbare trackingtechnologieën om jouw ervaring op {APP_NAME} te verbeteren. Deze
+      hulpmiddelen helpen ons gebruikersinteracties te begrijpen en onze dienst te verbeteren. Door je aan te melden op
+      ons platform stem je in met het gebruik van cookies zoals beschreven in dit beleid.
+    </p>
+    <h2 class="h3 mt-6 mb-2">3. Gegevensopslag & Bewaring</h2>
+    <ul>
+      <li><strong>Opslaglocatie:</strong> Jouw gegevens worden opgeslagen binnen de Europese Unie (EU).</li>
+      <li><strong>Bewaartermijn:</strong> Wij bewaren jouw gegevens totdat je je account verwijdert. Zodra je account is
+        verwijderd, worden jouw gegevens verwijderd uit onze systemen in overeenstemming met de toepasselijke wet- en
+        regelgeving.
+      </li>
+    </ul>
+    <h2 class="h3 mt-6 mb-2">4. Gegevensdeling & Derden</h2>
+    <p>
+      Wij delen bepaalde gegevens met externe dienstverleners om onze dienst mogelijk te maken, waaronder:
+    </p>
+    <ul>
+      <li><strong>Stripe:</strong> Voor het verwerken van betalingen, waarbij jouw e-mailadres en betalingsinformatie
+        gedeeld worden.
+      </li>
+    </ul>
+    <p>Wij zorgen ervoor dat deze derden voldoen aan strikte normen voor gegevensbescherming.</p>
+    <h2 class="h3 mt-6 mb-2">5. Rechten van Gebruikers (AVG-naleving)</h2>
+    <p>
+      Als gebruiker van {APP_NAME} heb je de volgende rechten met betrekking tot jouw persoonsgegevens:
+    </p>
+    <ul>
+      <li><strong>Inzage:</strong> Je kunt een kopie van je gegevens opvragen door contact met ons op te nemen.</li>
+      <li><strong>Correctie:</strong> Je kunt delen van je gegevens bewerken via je accountinstellingen.</li>
+      <li><strong>Verwijdering:</strong> Je kunt je gegevens verwijderen door je account te verwijderen of een bericht
+        te
+        sturen naar {SUPPORT_EMAIL}.
+      </li>
+      <li>
+        <strong>Uitoefenen van je rechten:</strong> Neem contact met ons op via onze support e-mail om deze rechten uit
+        te
+        oefenen.
+      </li>
+    </ul>
+    <h2 class="h3 mt-6 mb-2">6. Contactinformatie</h2>
+    <p>
+      Als je vragen, zorgen of verzoeken hebt met betrekking tot jouw persoonsgegevens of dit privacybeleid, neem dan
+      contact met ons op via
+      <a href=`mailto:${SUPPORT_EMAIL}`>{SUPPORT_EMAIL}</a>.
+    </p>
+    <h2 class="h3 mt-6 mb-2">7. Wijzigingen in dit Privacybeleid</h2>
+    <p>
+      We kunnen ons privacybeleid van tijd tot tijd bijwerken. Eventuele wijzigingen worden op deze pagina geplaatst met
+      een bijgewerkte "Laatst bijgewerkt"-datum. Voortgezet gebruik van onze dienst betekent dat je akkoord gaat met het
+      bijgewerkte privacybeleid.
+    </p>
+    <hr/>
+    <p>Bedankt voor je vertrouwen in {APP_NAME} met je persoonlijke gegevens!</p>
+  </article>
+</Layout>
+
+<style>
+    article {
+        margin: 4rem auto;
+        max-width: 900px;
+    }
+
+    p {
+        margin-bottom: 1rem;
+    }
+
+    ul {
+        list-style: disc;
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    hr {
+        margin: 2rem 0;
+    }
+
+    a {
+        color: hsl(var(--primary));
+        text-decoration: underline;
+    }
+</style>

@@ -12,8 +12,9 @@ export const server = {
     }),
     handler: async ({email}) => {
       const { data, error } = await resend.emails.send({
-        from: 'Bizzly <support@diettailor.fit>',
+        from: 'Bizzly <hello@bizzly.nl>',
         to: email,
+        replyTo: 'support@bizzly.nl',
         subject: 'Bevestiging Bizzly',
         html: `
         <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; padding: 40px 20px;">
@@ -24,7 +25,7 @@ export const server = {
         </tr>
           <tr>
             <td style="text-align: center; padding-bottom: 30px;">
-              <h1 style="font-size: 28px; margin: 0; color: #111827;">Welkom bij <span style="color: #3b82f6;">Bizzly</span> 👋</h1>
+              <h1 style="font-size: 28px; margin: 0; color: #111827;">Welkom bij <span style="color: #1860fb;">Bizzly</span> 👋</h1>
             </td>
           </tr>
           <tr>
@@ -42,8 +43,8 @@ export const server = {
               <p>Heb je ideeën, feedback of wil je meedenken? Reageer gerust op deze mail. We bouwen Bizzly graag samen met jou.</p>
     
               <p>
-              Groet,<br />
-              Patrick Huizinga<br />
+              Groet,<br /><br />
+              <strong>Patrick Huizinga</strong><br />
               Oprichter van Bizzly
               </p>
             </td>

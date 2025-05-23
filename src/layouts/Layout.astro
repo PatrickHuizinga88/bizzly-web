@@ -36,8 +36,8 @@ import Umami from "../components/Umami.astro";
 					<Image src={Logo} alt="Bizzly" class="h-8 sm:h-10 w-auto"/>
 				</a>
 				<div class="flex gap-4">
-					<a href="mailto:hello@bizzly.nl" class="hidden sm:inline-flex items-center justify-center gap-2 h-10 bg-background border font-medium rounded-full px-4 hover:bg-muted duration-150">Deel je ideeën</a>
-					<a href="#cta" class="inline-flex items-center justify-center gap-2 h-10 bg-primary text-primary-foreground font-medium rounded-full px-4 hover:bg-primary-dark duration-150">Inschrijven</a>
+					<a href="mailto:hello@bizzly.nl" class="hidden sm:inline-flex items-center justify-center gap-2 h-10 bg-background border text-sm font-medium rounded-full px-4 hover:bg-muted duration-150">Deel je ideeën</a>
+					<a href="https://bizzly.nl#cta" class="inline-flex items-center justify-center gap-2 h-10 bg-primary text-primary-foreground text-sm font-medium rounded-full px-4 hover:bg-primary-dark duration-150">Inschrijven</a>
 				</div>
 			</div>
 		</div>
@@ -45,8 +45,18 @@ import Umami from "../components/Umami.astro";
 	<main>
 		<slot />
 	</main>
-	<footer>
-
+	<footer class="bg-muted py-8">
+		<div class="container">
+			<div class="flex justify-between items-center">
+				<div class="flex items-center gap-4">
+					<Image src={Logo} alt="Bizzly" class="h-8 sm:h-10 w-auto"/>
+					<p class="text-sm text-muted-foreground">© 2025 Bizzly. Alle rechten voorbehouden.</p>
+				</div>
+				<div class="flex gap-8">
+					<a href="/privacybeleid" class="underline text-sm text-muted-foreground">Privacybeleid</a>
+				</div>
+			</div>
+		</div>
 	</footer>
 
 	<script src="../utils/aos.js"></script>
