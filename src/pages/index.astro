@@ -6,6 +6,30 @@ import { Image } from "astro:assets";
 import PatrickHuizinga from "../assets/patrick-huizinga.png";
 import Logomark from "../assets/logomark.svg";
 import WaitlistRequest from "../components/WaitlistRequest.astro";
+import { Accordion } from "../components/Accordion";
+
+const accordionData = [
+  {
+    title: "Voor wie is Bizzly bedoeld?",
+    description: "Bizzly is bedoeld voor zelfstandigen, freelancers en kleine ondernemers die behoefte hebben aan een slimme assistent om hen te ondersteunen bij hun dagelijkse werkzaamheden buiten hun core business."
+  },
+  {
+    title: "Is Bizzly een vervanging van externe professionals?",
+    description: "Nee, Bizzly is geen vervanging voor externe professionals zoals boekhouders of marketingbureaus. Het is een aanvulling die je helpt om sneller antwoorden te vinden op veelvoorkomende vragen en problemen."
+  },
+  {
+    title: "Wat maakt Bizzly een betere tool dan bijvoorbeeld ChatGPT?",
+    description: "Bizzly is specifiek ontworpen voor zelfstandigen en freelancers. Het biedt niet alleen antwoorden, maar ook contextuele begeleiding en advies op maat, afgestemd op jouw specifieke situatie en projecten."
+  },
+  {
+    title: "Hoeveel kost Bizzly?",
+    description: "De prijsstelling is nog niet definitief, maar we streven naar een betaalbaar model voor zelfstandigen en een optie om Bizzly gratis uit te proberen."
+  },
+  {
+    title: "Wanneer kan ik Bizzly uitproberen?",
+    description: "We zijn momenteel bezig met de ontwikkeling. Wanneer we zien dat er voldoende interesse is in Bizzly, gaan we de eerste versie lanceren. Meld je aan voor de wachtlijst om als eerste op de hoogte te zijn van updates!"
+  }
+]
 ---
 
 <Layout>
@@ -129,6 +153,13 @@ import WaitlistRequest from "../components/WaitlistRequest.astro";
         <p class="max-w-[800px] mb-10">Meld je aan voor de wachtlijst en ontvang als eerste een uitnodiging om Bizzly uit te proberen.</p>
         <WaitlistRequest/>
       </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-24 sm:py-32 bg-muted">
+    <div class="container">
+      <h1 class="h2 mb-12">Veelgestelde vragen</h1>
+      <Accordion data={accordionData} client:idle />
     </div>
   </section>
 </Layout>

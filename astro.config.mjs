@@ -5,6 +5,8 @@ import vue from '@astrojs/vue';
 import netlify from '@astrojs/netlify';
 import sitemap from '@astrojs/sitemap';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://bizzly.nl',
@@ -12,6 +14,6 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [vue(), sitemap()],
+  integrations: [vue(), sitemap(), react()],
   adapter: netlify()
 });
